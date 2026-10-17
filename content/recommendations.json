@@ -1,0 +1,80 @@
+{
+  "_comment": "Recommendations received on LinkedIn, all set to visible there, verbatim apart from collapsed whitespace; ordered operations-first.",
+  "facts": [
+    "rec-summary"
+  ],
+  "items": [
+    {
+      "id": "robert-rutherford",
+      "name": "Robert Rutherford",
+      "relationship": "Reported directly to Ben",
+      "org": "Gibson Plumbing",
+      "date": "2021-11",
+      "text": "Ben was an open, hardworking and supportive boss. He has a deep understanding of technical systems and knows how to organizes teams in a way that best serves the company. He is innovative and full of great ideas to incorporate the newest technologies to tackle current issues. His leadership and direction of the IT team were critical to our success. I really appreciated his hands on approach and direction.",
+      "source": "linkedin"
+    },
+    {
+      "id": "matthew-santos",
+      "name": "Matthew Santos",
+      "relationship": "Reported directly to Ben",
+      "org": "Gibson Plumbing",
+      "date": "2021-10",
+      "text": "Ben hired me as the first data analyst at Gibson Plumbing after I completed a data science boot camp. He provided an opportunity to dramatically expand my skill set and work on very impactful projects for the company. Ben has an incredible wealth of knowledge when it comes to Technology and IT. He is always looking for ways to improve the company through implementation of different technologies. Many processes and departments were improved and streamlined in the year I was under the direction of Ben. Ben Meadows is a dedicated and always willing to help others achieve their goals and improve themselves. He is dedicated to improving Gibson Plumbing in every aspect and would be an incredible addition for any company. I would absolutely work with him again in the future",
+      "source": "linkedin"
+    },
+    {
+      "id": "william-d-smith-iv",
+      "name": "William D. Smith IV",
+      "relationship": "Reported directly to Ben",
+      "org": "Fortiline Waterworks",
+      "date": "2015-10",
+      "text": "I worked under Ben while we were at Fortiline in San Antonio. He proved to be a wealth of knowledge while establishing the branch and training a very young staff. His Organization and industry experience set the branch on a path of tremendous success and I have no reservations recommending him for any professional opportunity as he would be an asset to any team.",
+      "source": "linkedin"
+    },
+    {
+      "id": "john-dilbeck",
+      "name": "John Dilbeck",
+      "relationship": "Reported directly to Ben",
+      "org": "Gibson Plumbing",
+      "date": "2021-12",
+      "text": "I have had the pleasure of knowing and working with Ben for the past few years. In that period, I have learned many things about him. Ben is a pleasure to work with due to his positivity and pleasant outlook towards daily tasks. He is a fantastic leader and always handled the position well by making sure that everyone was equally vested and engaged. He has true expertise in many aspects of business. He engages all with great character and a true friendly nature that any organization would want to be associated with. Ben will be an asset to any organization he joins or works with. I can confidently recommend him for any position that he would pursue. Anyone that can work with Ben will encounter someone who will exceed expectations on a regular basis. I am privileged to call him a boss, a peer, and a friend.",
+      "source": "linkedin"
+    },
+    {
+      "id": "dominic-estrada",
+      "name": "Dominic Estrada",
+      "relationship": "Reported directly to Ben",
+      "org": "Gibson Plumbing",
+      "date": "2021-11",
+      "text": "Ben was a great boss, leader, and friend. In the four years I worked with him, he showed a genuine interest in my professional development and was always available for a one-on-one conversation. I learned a great deal under his direction, from tech to ethics. He is a man of integrity and believes in doing the right thing and tries to live up to those high principles. I highly recommend Ben as a leader who will encourage and support others' personal and professional development. I would be happy to work with Ben if our paths crossed again.",
+      "source": "linkedin"
+    },
+    {
+      "id": "jonathan-sexton",
+      "name": "Jonathan Sexton",
+      "relationship": "Reported directly to Ben",
+      "org": "Gibson Plumbing",
+      "date": "2021-09",
+      "text": "Ben helped me change industries by taking a chance and hiring me for my first software development position - a gesture I will always be grateful for. I worked for Ben for over 2 years and in that time he not only shared knowledge with me but also gave me autonomy to learn on the job and fostered an environment that valued employee growth and doing things the right way. He always set attainable goals with clear parameters, is a man of his word, helpful, and friendly. I would happily work for Ben again and am happy to give him my recommendation.",
+      "source": "linkedin"
+    },
+    {
+      "id": "isaac-castillo",
+      "name": "Isaac Castillo",
+      "relationship": "Vendor; Ben was his client",
+      "org": "Gibson Plumbing",
+      "date": "2021-08",
+      "text": "I worked with Benjamin through my company and have done several projects for him and his team. Benjamin has a great wealth of knowledge when it comes to IT and development. He is always pushing the envelope with tech at his current company so that he, his team and company stay on the leading edge. Benjamin is well organized and manages his team efficiently and effectively. I would gladly work with Benjamin again on any team or project.",
+      "source": "linkedin"
+    },
+    {
+      "id": "julia-perry",
+      "name": "Julia Perry",
+      "relationship": "Worked with Ben",
+      "org": "Gibson Plumbing",
+      "date": "2021-12",
+      "text": "During my 2 years of working with Ben Meadows, he quickly became a good friend and dependable colleague. His unique gift for out-of-the-box thinking and creative solutions was one of the main reasons I considered him a trusted mentor. For that reason, I often sought him for advice. He is a reliable and dedicated professional who often went above and beyond to make certain the job got done, even in the most stressful of situations. If the opportunity ever arose in the future, I wouldn’t hesitate for the opportunity to work with him again.",
+      "source": "linkedin"
+    }
+  ]
+}

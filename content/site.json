@@ -1,0 +1,719 @@
+{
+  "_comment": "Site copy. Every item lists the fact ids it rests on in `facts`. Ids point into a private fact base; `linkedin:<section>` means the text is already live on the public LinkedIn profile. scripts/check-visibility.py fails when an id is unknown or not public.",
+  "updated": "2026-10-17",
+  "origin": "https://benjaminmeadows.com",
+  "person": {
+    "name": "Benjamin Meadows",
+    "shortName": "Ben Meadows",
+    "headline": "Operations & Sales Executive",
+    "location": "Phoenix, Arizona",
+    "linkedin": "https://www.linkedin.com/in/thebenmeadows",
+    "source": "https://github.com/TheBenMeadows/benjaminmeadows.com",
+    "personalSite": "https://thebenmeadows.com/",
+    "email": "hello@benjaminmeadows.com"
+  },
+  "summary": {
+    "facts": [
+      "gib-role",
+      "gib-growth",
+      "gib-scope",
+      "fort-role",
+      "dan-role",
+      "dan-reps",
+      "hc-role",
+      "svk-scope",
+      "gib-reports-direct"
+    ],
+    "paragraphs": [
+      "Twenty years in waterworks distribution, trade contracting, and commercial construction, on both the operations and revenue side.",
+      "As Vice President, Internal Operations at Gibson Plumbing, ran purchasing, warehousing, fleet, facilities, IT, warranty, and risk management through six department heads as revenue roughly tripled. P&L experience jointly on a $20M distribution branch and as an owner of two companies. Since 2022, sell SUNVEK Roofing's most complex commercial work with full pricing and scope authority on my own projects.",
+      "Built departments, an IT team, SOPs, a manufacturers' sales representative network, and two companies."
+    ]
+  },
+  "consulting": {
+    "facts": [
+      "dan-role",
+      "linkedin:about"
+    ],
+    "text": "I take on project-based operations and plumbing consulting through Dangart Group. If you have an interesting idea, problem, or project, I would like to hear about it."
+  },
+  "results": [
+    {
+      "lead": "Growth",
+      "text": "Ran Gibson's internal operations as revenue tripled, from roughly $27M to a projected $80M+, across the San Antonio, Austin, DFW, and Houston markets.",
+      "facts": [
+        "gib-growth",
+        "gib-role",
+        "gib-markets",
+        "gib-scope"
+      ]
+    },
+    {
+      "lead": "Purchasing and logistics",
+      "text": "Annual material purchasing grew from $16M to over $36M; negotiated and signed all vendor discount and rebate agreements. A direct shipment program saved 30% on fittings in its first year. Ran a 35,000 sq ft warehouse, completed 11 physical inventories, and brought a fleet of over eighty vehicles into DOT compliance.",
+      "facts": [
+        "gib-purchasing",
+        "gib-directship",
+        "gib-inventory",
+        "gib-fleet"
+      ]
+    },
+    {
+      "lead": "Sales leadership",
+      "text": "Built a national manufacturers' rep network at Dangart, led a branch sales team at Fortiline, and created SUNVEK's technical sales training materials.",
+      "facts": [
+        "dan-reps",
+        "fort-role",
+        "svk-training"
+      ]
+    },
+    {
+      "lead": "P&L",
+      "text": "Joint P&L responsibility for a $20M distribution branch, and owner-level P&L in two companies.",
+      "facts": [
+        "fort-role",
+        "dan-role",
+        "hc-role"
+      ]
+    },
+    {
+      "lead": "KPIs and dashboards",
+      "text": "Responsible for Gibson's non-revenue KPIs, wrote the BI dashboards used by every executive, and led the SAGE 100 ERP implementation.",
+      "facts": [
+        "gib-kpi",
+        "gib-sage"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "sunvek",
+      "org": "SUNVEK Roofing",
+      "place": "Phoenix, AZ",
+      "start": "2022-01",
+      "end": "present",
+      "title": "Senior Roof Consultant",
+      "startTitle": "Roof Consultant, Outside Sales",
+      "titleNote": "Senior Roof Consultant 2024 to present; Roof Consultant, Outside Sales 2022 to 2024",
+      "intro": "Sell SUNVEK's most complex commercial work (new construction, design-build, design-assist, reroofs) and custom homes with $4M to $36M home values, with full pricing and scope authority on my own projects.",
+      "summary": "Commercial and custom-home roofing sales with full pricing and scope authority on my own projects.",
+      "facts": [
+        "svk-role",
+        "svk-scope"
+      ],
+      "bullets": [
+        {
+          "text": "Moved from Texas with no book of business and sold over $1M in the first year. Led SUNVEK's sales team in total sales and close rate in 2025.",
+          "facts": [
+            "svk-start",
+            "svk-rank-public"
+          ]
+        },
+        {
+          "text": "Created the technical sales training materials and help train new consultants. ServiceTitan champion for the sales team.",
+          "facts": [
+            "svk-training"
+          ]
+        },
+        {
+          "text": "First at SUNVEK to use drones and photogrammetry for roof measurement. Implemented e-signatures for proposals and trained the other sales staff on these tools.",
+          "facts": [
+            "svk-process"
+          ]
+        }
+      ],
+      "startTitleEnd": "2024-12"
+    },
+    {
+      "id": "tablerock",
+      "org": "TableRock Industries",
+      "place": "",
+      "start": "2022-05",
+      "end": "2024-08",
+      "title": "Board Member",
+      "summary": "Operational due diligence on plumbing contractor acquisition targets.",
+      "facts": [
+        "tr-board"
+      ],
+      "bullets": [
+        {
+          "text": "Board-level operational due diligence and process design for plumbing contractor acquisition targets, until the principal paused acquisitions in 2024.",
+          "facts": [
+            "tr-board"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gibson",
+      "org": "Gibson Plumbing",
+      "place": "San Antonio, TX",
+      "start": "2015-06",
+      "end": "2021-11",
+      "title": "Vice President, Internal Operations",
+      "startTitle": "Director, Internal Operations",
+      "titleNote": "Vice President 2019 to 2021; Director, Internal Operations 2015 to 2019",
+      "intro": "Hired to manage the Purchasing and Warehousing departments, then created and managed the Technology, Warranty & Safety, Risk Mitigation & Litigation, and Fleet & Facilities Management departments.",
+      "summary": "Ran purchasing, warehousing, fleet, facilities, IT, warranty, and risk while revenue grew roughly 3x.",
+      "facts": [
+        "gib-role",
+        "gib-scope"
+      ],
+      "bullets": [
+        {
+          "lead": "Leadership",
+          "text": "Managed six department heads across purchasing, warehouse, warranty, fleet, facilities, and technology, up from three at hire. Hired and trained several people into their first technical roles; two went on to become a software engineer at Amazon and an AI engineer at JPMorgan Chase.",
+          "facts": [
+            "gib-reports-direct",
+            "gib-firsthires",
+            "gib-firsthires-titles",
+            "rec-summary"
+          ]
+        },
+        {
+          "lead": "SOPs and process",
+          "text": "Created the procedures for inventory tracking, receiving, cycle counts, pull sheets, material returns, and tool checkout, and completed 11 physical inventories.",
+          "facts": [
+            "gib-inventory"
+          ]
+        },
+        {
+          "lead": "KPIs and reporting",
+          "text": "Responsible for the company's non-revenue KPIs (purchasing, labor and materials as a percentage of sales, warranty, fleet). Wrote the BI dashboards used by every executive and hired a data scientist for the executive team.",
+          "facts": [
+            "gib-kpi"
+          ]
+        },
+        {
+          "lead": "Purchasing and supply chain",
+          "text": "Annual material purchasing grew from $16M to over $36M. Directly negotiated vendor discounts and rebates and signed the agreements, including a five-year national supply agreement and a national fixture rebate agreement. Created the direct shipment program (30% savings on fittings in its first year), and in 2021 held Gibson's costs flat through one manufacturer's market increase and another's third increase of the year.",
+          "facts": [
+            "gib-purchasing",
+            "gib-signatory-public",
+            "gib-directship",
+            "gib-price-hold-public"
+          ]
+        },
+        {
+          "lead": "Production and fabrication",
+          "text": "Ran package assembly and an in-house fabrication shop supplying about 3,000 houses a year: rough-in, top-out, and trim kits built to templates, with a time study of every warehouse task. I have not run a full production plant.",
+          "facts": [
+            "gib-production"
+          ]
+        },
+        {
+          "lead": "Warehouse, fleet, and facilities",
+          "text": "Ran a 35,000 sq ft warehouse. Fleet strategy for maintenance, aging, and acquisitions across more than eighty vehicles, brought into DOT compliance. Three office expansions.",
+          "facts": [
+            "gib-inventory",
+            "gib-fleet"
+          ]
+        },
+        {
+          "lead": "ERP and software",
+          "text": "Led the SAGE 100 ERP implementation in 2017 (conversion from Contractor's Dream, 3,000 to 5,000 part numbers, new templates, inventory migration), then brought warranty, scheduling, inspections, and material checkout into the system. Created the IT department and a software team of three developers plus a data scientist from scratch. Custom internal and customer-facing applications (work-ticket creation, material checkout, crew QA) saved over 5,000 person-hours in 2020.",
+          "facts": [
+            "gib-sage",
+            "gib-it"
+          ]
+        },
+        {
+          "lead": "Warranty and risk",
+          "text": "Held warranty overhead growth to half the rate of revenue growth. Oversaw all litigation, mediation, and subrogation as the designated company representative for depositions.",
+          "facts": [
+            "gib-warranty-risk"
+          ]
+        },
+        {
+          "lead": "Peer exchange",
+          "text": "Invited to exchange inventory and software practices with two peer contractors. In April 2019, spent several days on-site at Ridgeway Plumbing, one of Florida's largest plumbing contractors, and brought back daily cycle counting and the move to a SQL back end. A second exchange, with Kimbel Mechanical in Arkansas, was cancelled by COVID.",
+          "facts": [
+            "gib-peers"
+          ]
+        }
+      ],
+      "startTitleEnd": "2019-06"
+    },
+    {
+      "id": "fortiline",
+      "org": "Fortiline Waterworks",
+      "place": "San Antonio, TX",
+      "start": "2014-01",
+      "end": "2015-06",
+      "title": "Assistant Branch Manager",
+      "summary": "Helped open a new waterworks branch; joint P&L on $20M in annual revenue.",
+      "facts": [
+        "fort-role"
+      ],
+      "bullets": [
+        {
+          "text": "Hired to help open a new branch in a new market and to train a nearly all-new staff. Jointly responsible for monthly and yearly branch performance (P&L, EBITDA, ROI) on $20M in annual revenue.",
+          "facts": [
+            "fort-role"
+          ]
+        },
+        {
+          "text": "Managed $1.5M in branch inventory. Led four to five salesmen and handled half of the branch's accounts, including the largest.",
+          "facts": [
+            "fort-role"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dangart",
+      "org": "Dangart Group / Meadows EnviroTech",
+      "place": "",
+      "start": "2010-08",
+      "end": "present",
+      "title": "Owner, General Manager",
+      "titleNote": "Full-time 2010 to 2013; project-based consulting since",
+      "summary": "Consulting, manufacturers' rep, and construction management company; project-based consulting since 2013.",
+      "facts": [
+        "dan-role"
+      ],
+      "bullets": [
+        {
+          "text": "Co-founded a consulting, manufacturers' rep, and construction management company with my father and later bought him out. Project-based plumbing and operations consulting since 2013.",
+          "facts": [
+            "dan-role"
+          ]
+        },
+        {
+          "text": "Obtained statewide and international product representation rights for multiple lines, and built and managed a network of about 20 independent rep agencies (about 50 salespeople) covering 42 states, Canada, and the Caribbean. Recruited, trained, and traveled to them.",
+          "facts": [
+            "dan-reps"
+          ]
+        },
+        {
+          "text": "Dangart Group holds Arizona ROC 349210 (CR-37 Plumbing), currently inactive. Qualifying Party and Member.",
+          "facts": [
+            "dan-roc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thebenmeadows",
+      "org": "TheBenMeadows",
+      "place": "",
+      "start": "2014-06",
+      "end": "present",
+      "title": "Artist; Technical Advisor & Speaker",
+      "startTitle": "Technical Advisor & Speaker",
+      "titleNote": "Technical advisor since 2014; artist since 2016",
+      "summary": "Independent art practice and blockchain advisory work, outside of my day job.",
+      "facts": [
+        "tbm-art",
+        "linkedin:experience"
+      ],
+      "bullets": [
+        {
+          "text": "138 pieces minted, exhibited in ten cities between 2023 and 2026, with one piece in the Museum of Crypto Art's Fundraiser Collection. Created an SVGZ compression method for Bitcoin inscriptions in 2023. More on the speaking and side work page.",
+          "facts": [
+            "tbm-art"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winwater",
+      "org": "Orlando Winwater Works (Winsupply)",
+      "place": "Orlando, FL",
+      "start": "2013-02",
+      "end": "2013-12",
+      "title": "Outside Sales",
+      "summary": "The branch's top salesman; helped open the branch and sold its largest job to that point.",
+      "facts": [
+        "win-role"
+      ],
+      "bullets": [
+        {
+          "text": "The branch's top salesman. Helped open the branch, and sold and shipped its largest job to that point ($1M) at above-average margin.",
+          "facts": [
+            "win-role",
+            "early-career-claims"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hc-construction",
+      "org": "HC Construction / Hazen Construction",
+      "place": "Louisville, KY",
+      "start": "2012",
+      "end": "2013",
+      "title": "Founder; Roofing Division Manager",
+      "summary": "Started and ran a roofing and general contracting division, then founded the company that took over its work.",
+      "facts": [
+        "hc-role",
+        "hazen-ledger"
+      ],
+      "bullets": [
+        {
+          "text": "Started and ran the roofing and general contracting division of Hazen Construction: 67 jobs and $523K in job value.",
+          "facts": [
+            "hc-role",
+            "hazen-ledger"
+          ]
+        },
+        {
+          "text": "Took over the division's open jobs and warranties and founded HC Construction, profitable in its first year.",
+          "facts": [
+            "hc-role"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suntec",
+      "org": "Suntec Roofing",
+      "place": "Phoenix, AZ",
+      "start": "2011",
+      "end": "2012",
+      "title": "Salesman and Project Manager",
+      "summary": "Roofing sales, contracts, crews, insurance work, and material purchasing.",
+      "facts": [
+        "suntec-role"
+      ],
+      "bullets": [
+        {
+          "text": "Sales, contracts, crews, insurance work, and material purchasing, with authority to sign checks for the owner.",
+          "facts": [
+            "suntec-role"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ferguson",
+      "org": "Ferguson Waterworks",
+      "place": "Orlando, FL",
+      "start": "2007-01",
+      "end": "2010-08",
+      "title": "Inside Sales",
+      "summary": "Waterworks inside sales; finished the management trainee program in six months.",
+      "facts": [
+        "ferg-role"
+      ],
+      "bullets": [
+        {
+          "text": "Completed the 18-24 month sales-management trainee program in six months, then was given the branch's largest accounts. About 400 orders a month for three years.",
+          "facts": [
+            "ferg-role",
+            "early-career-claims"
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "unt",
+      "org": "University of North Texas",
+      "text": "Bachelor's, Administration & IT, Magna Cum Laude. Awarded a transfer excellence scholarship. Invited to the Golden Key, Phi Kappa Phi, Alpha Sigma Lambda, Phi Sigma Pi, and Mortar Board honor societies.",
+      "short": "Bachelor's, Administration & IT, Magna Cum Laude",
+      "when": "2022",
+      "date": "2022",
+      "facts": [
+        "edu-unt",
+        "linkedin:education"
+      ]
+    },
+    {
+      "id": "harvardx",
+      "org": "HarvardX (Harvard University via edX)",
+      "text": "Professional Certificate in Data Science (R), 8 of 9 courses complete.",
+      "when": "In progress",
+      "facts": [
+        "edu-harvardx"
+      ]
+    },
+    {
+      "id": "earlier-coursework",
+      "org": "Stetson University, Bryan College, Valencia College",
+      "text": "History coursework. Philosophy Club at Stetson. Four-year presidential merit scholarship at Stetson and at Bryan; twice-elected class treasurer at Bryan. At Valencia, first high school junior accepted to the Honors Program, President's Honor List, Phi Theta Kappa. Named a Valencia College Notable Alumnus in 2015.",
+      "when": "",
+      "facts": [
+        "edu-earlier",
+        "honor-valencia",
+        "linkedin:education"
+      ]
+    },
+    {
+      "id": "courses",
+      "org": "Additional coursework",
+      "text": "Introduction to Operations Management, The Wharton School (Coursera, 2015). Unethical Decision Making in Organizations, University of Lausanne (Coursera, 2014). Water Supply & Sanitation Policy in Developing Countries, University of Manchester (Coursera, 2014). Strategy Consulting Virtual Experience Program, Accenture (2022). Service Writer Training, Farmers Insurance Group (2011).",
+      "when": "",
+      "facts": [
+        "linkedin:courses",
+        "linkedin:certifications"
+      ]
+    }
+  ],
+  "credentials": [
+    {
+      "group": "Contracting and trade licenses",
+      "facts": [
+        "dan-roc",
+        "cred-licenses",
+        "linkedin:certifications"
+      ],
+      "items": [
+        {
+          "text": "Arizona CR-37 Plumbing Contractor, Qualifying Party (ROC 349210, currently inactive)",
+          "date": "2023-12"
+        },
+        {
+          "text": "Arizona Insurance Adjuster (No. 20200827)",
+          "date": "2022-02"
+        },
+        {
+          "text": "Texas Journeyman Plumber (No. 53100)",
+          "date": "2021-05"
+        }
+      ]
+    },
+    {
+      "group": "Safety and quality",
+      "facts": [
+        "cred-licenses"
+      ],
+      "items": [
+        {
+          "text": "OSHA 30",
+          "date": "2021-05"
+        },
+        {
+          "text": "OSHA 10",
+          "date": "2020-11"
+        },
+        {
+          "text": "Six Sigma Yellow Belt (6sigmastudy / VMEdu)",
+          "date": "2016-06"
+        }
+      ]
+    },
+    {
+      "group": "Roofing",
+      "facts": [
+        "cred-licenses",
+        "linkedin:certifications"
+      ],
+      "items": [
+        {
+          "text": "CertainTeed Liquid-Applied Roofing Master Craftsman",
+          "date": "2024-10"
+        },
+        {
+          "text": "Tile Roofing Industry Alliance Manual Certification",
+          "date": "2024-10"
+        },
+        {
+          "text": "CertainTeed Modified Bitumen Master Craftsman",
+          "date": "2024-09"
+        },
+        {
+          "text": "CertainTeed Master Shingle Applicator",
+          "date": "2023-10"
+        },
+        {
+          "text": "CertainTeed Shingle Quality Specialist",
+          "date": "2023-10"
+        }
+      ]
+    },
+    {
+      "group": "Other",
+      "facts": [
+        "linkedin:certifications"
+      ],
+      "items": [
+        {
+          "text": "FCC Licensed Amateur Radio Operator, Technician Class",
+          "date": "2000-02"
+        }
+      ]
+    }
+  ],
+  "affiliations": [
+    {
+      "id": "axiom",
+      "org": "Axiom Community of Recovery",
+      "role": "Board Member",
+      "start": "2022-08",
+      "end": "present",
+      "text": "Featured in The Arizona Insider's \"Mission Monday\", May 2026.",
+      "link": "https://theazinsider.com/mission-monday-ben-meadows/",
+      "linkText": "Read the article",
+      "facts": [
+        "axiom-board"
+      ]
+    },
+    {
+      "id": "oca-council",
+      "org": "Orthodox Church in America, 21st All-American Council",
+      "role": "Council Staff, Exhibitor & Vendor Subcommittee Chair",
+      "start": "2024-10",
+      "end": "2025-07",
+      "text": "",
+      "facts": [
+        "linkedin:volunteering"
+      ]
+    },
+    {
+      "id": "bni",
+      "org": "BNI (Business Network International)",
+      "role": "Member; Chapter Education Coordinator from October 2023",
+      "short": "Member, later Chapter Education Coordinator",
+      "start": "2022-10",
+      "end": "2024-09",
+      "text": "",
+      "facts": [
+        "bni"
+      ]
+    },
+    {
+      "id": "parish",
+      "org": "Parish service",
+      "short": "Acolyte; Parish Council Secretary; Lay Delegate",
+      "role": "Acolyte, Saints Peter and Paul Orthodox Church (2022 to present). Parish Council Secretary (2020 to 2022), Acolyte and Lay Delegate to the 2020 and 2021 Diocesan Assemblies, St. Anthony the Great Orthodox Church.",
+      "start": "2019-04",
+      "end": "present",
+      "text": "",
+      "facts": [
+        "linkedin:volunteering"
+      ]
+    },
+    {
+      "id": "vistage",
+      "org": "Vistage Worldwide",
+      "role": "Member, San Antonio Key Executive Group",
+      "start": "2017-10",
+      "end": "2021-11",
+      "text": "Personal coaches included one who sold a company to Google and the retired head of HR from Walmart.",
+      "facts": [
+        "gib-vistage"
+      ]
+    }
+  ],
+  "skills": {
+    "facts": [
+      "linkedin:skills",
+      "linkedin:languages"
+    ],
+    "groups": [
+      {
+        "label": "Operations",
+        "items": [
+          "P&L management",
+          "Purchasing",
+          "Contract negotiation",
+          "Inventory management",
+          "Fleet and facilities",
+          "Warranty and risk",
+          "SOP writing",
+          "Strategic planning"
+        ]
+      },
+      {
+        "label": "Sales",
+        "items": [
+          "Sales management",
+          "New business development",
+          "Account management",
+          "Pricing",
+          "Rep network development",
+          "Technical sales training"
+        ]
+      },
+      {
+        "label": "Systems",
+        "items": [
+          "SAGE 100 ERP",
+          "ServiceTitan",
+          "Power BI",
+          "Metabase",
+          "SQL",
+          "R",
+          "Server and network administration",
+          "Cybersecurity"
+        ]
+      },
+      {
+        "label": "Languages",
+        "items": [
+          "English (native)",
+          "Spanish (limited working)",
+          "Latin (elementary)",
+          "Russian (elementary)"
+        ]
+      }
+    ]
+  },
+  "milestones": [
+    {
+      "date": "2024-12",
+      "kind": "role",
+      "title": "Senior Roof Consultant",
+      "org": "SUNVEK Roofing",
+      "href": "/#sunvek",
+      "facts": [
+        "svk-role"
+      ]
+    },
+    {
+      "date": "2019-06",
+      "kind": "role",
+      "title": "Promoted to Vice President, Internal Operations",
+      "org": "Gibson Plumbing",
+      "href": "/#gibson",
+      "facts": [
+        "gib-role"
+      ]
+    },
+    {
+      "date": "2019-04",
+      "kind": "role",
+      "title": "On-site practice exchange with Ridgeway Plumbing",
+      "org": "Gibson Plumbing",
+      "summary": "Several days in Florida trading inventory management and software practices. A second exchange, with Kimbel Mechanical in Arkansas, was cancelled by COVID.",
+      "href": "/#gibson",
+      "facts": [
+        "gib-peers"
+      ]
+    },
+    {
+      "date": "2017-06",
+      "kind": "role",
+      "title": "Led the SAGE 100 ERP implementation",
+      "org": "Gibson Plumbing",
+      "summary": "June to August 2017: conversion from Contractor's Dream, 3,000 to 5,000 part numbers, inventory migration.",
+      "href": "/#gibson",
+      "facts": [
+        "gib-sage"
+      ]
+    },
+    {
+      "date": "2015-08",
+      "kind": "education",
+      "title": "Named Notable Alumnus",
+      "org": "Valencia College",
+      "href": "/#earlier-coursework",
+      "facts": [
+        "honor-valencia"
+      ]
+    }
+  ],
+  "technology": {
+    "facts": [
+      "gib-it",
+      "gib-kpi",
+      "linkedin:skills"
+    ],
+    "items": [
+      "Built and led Gibson's in-house software, data, and IT team: applications used daily by field crews, BI dashboards used by every executive, and network security.",
+      "SQL, R, Power BI, Metabase, SAGE 100 ERP, ServiceTitan. Server and network administration for a multi-office company."
+    ]
+  }
+}

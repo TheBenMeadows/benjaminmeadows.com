@@ -1,0 +1,9 @@
+# gitleaks: extend the default rules; content/site.json cites LinkedIn posts and
+# profiles whose ids match the linkedin-client-id pattern (they are public URLs).
+[extend]
+useDefault = true
+
+[[rules]]
+id = "linkedin-client-id"
+[rules.allowlist]
+paths = ['''content/site\.json''']

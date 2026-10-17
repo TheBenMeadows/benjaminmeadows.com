@@ -1,0 +1,59 @@
+{
+  "_comment": "The professional subset of the speaking list and the art and technology work. The full versions live on thebenmeadows.com; this page points there rather than copying them.",
+  "intro": "A short list of talks and press, and a note on the art and technology work I do outside of my day job. The full record of both lives on my personal site.",
+  "speaking": [
+    {
+      "id": "arizona-insider-2026",
+      "date": "2026-05",
+      "title": "\"Mission Monday: Ben Meadows\"",
+      "venue": "The Arizona Insider",
+      "kind": "Press",
+      "text": "A profile by Alison Bailin Batz, tied to my board service at Axiom Community of Recovery.",
+      "link": "https://theazinsider.com/mission-monday-ben-meadows/",
+      "linkText": "Read the article",
+      "facts": ["axiom-board"]
+    },
+    {
+      "id": "inpeak-ai-art-2023",
+      "date": "2023-02",
+      "title": "Introduction to AI Art, a five-part series",
+      "venue": "InPeak",
+      "kind": "Live webinar series, February to April 2023",
+      "text": "Featured speaker for a five-session introduction to AI tools for artists.",
+      "facts": ["linkedin:projects"]
+    },
+    {
+      "id": "club-fomo-2022",
+      "date": "2022-07",
+      "title": "Intro to Blockchain, NFTs & Web3",
+      "venue": "Club FOMO, Phoenix",
+      "kind": "In-person event",
+      "text": "Presented at the inaugural Crypto Curious: First Friday event in Phoenix.",
+      "facts": ["linkedin:projects"]
+    },
+    {
+      "id": "phcc-2019",
+      "date": "2019-05",
+      "title": "IT Hardware & Systems / Network Security",
+      "venue": "PHCC Construction Contractors' Alliance, national meeting, Madison, Wisconsin",
+      "kind": "Featured speaker, 90 minutes",
+      "text": "I covered what I had learned running the technology department at Gibson Plumbing.",
+      "facts": ["gib-phcc"]
+    }
+  ],
+  "speakingMore": {
+    "text": "I have also spoken on a number of podcasts, X Spaces, panels, and livestreams about blockchain, on-chain art, and AI tools.",
+    "link": "https://thebenmeadows.com/blog/podcasts-public-speaking/",
+    "linkText": "Full speaking list on thebenmeadows.com",
+    "facts": ["linkedin:projects"]
+  },
+  "artTech": {
+    "facts": ["tbm-art"],
+    "paragraphs": [
+      "Outside of work I have been an artist since 2016 and a technical advisor on blockchain projects since 2014. I have minted 138 pieces, and my work has been exhibited in Scottsdale, Barcelona, Milan, Florence, Ghent, Bali, Amsterdam, Paris, Las Vegas, and Lisbon between 2023 and 2026. One piece is in the Museum of Crypto Art's Fundraiser Collection.",
+      "In October 2023 I created an SVGZ compression method for putting vector art on Bitcoin."
+    ],
+    "link": "https://thebenmeadows.com/blog/art-tech-highlights/",
+    "linkText": "Art and technology highlights on thebenmeadows.com"
+  }
+}
