@@ -57,10 +57,17 @@ function hashed(name, body) {
     return name.replace(/(\.\w+)$/, `-${h}$1`);
 }
 
-const css = readFileSync(join(ROOT, "static", "styles.css"));
-const js = readFileSync(join(ROOT, "static", "site.js"));
-const CSS_NAME = hashed("styles.css", css);
-const JS_NAME = hashed("site.js", js);
+// These ship under content-hashed names, so a changed file gets a new URL and no
+// browser or edge cache can keep serving the old one.
+const HASHED = Object.fromEntries(
+    ["styles.css", "site.js", "headshot-320.jpg", "headshot-640.jpg", "og.png"].map((f) => {
+        const body = readFileSync(join(ROOT, "static", f));
+        return [f, { body, name: hashed(f, body) }];
+    }),
+);
+const asset = (f) => `/${HASHED[f].name}`;
+const CSS_NAME = HASHED["styles.css"].name;
+const JS_NAME = HASHED["site.js"].name;
 
 // ---------------------------------------------------------------- structured data
 
@@ -73,7 +80,7 @@ function personLd() {
         name: P.name,
         alternateName: P.shortName,
         url: `${ORIGIN}/`,
-        image: `${ORIGIN}/headshot-640.jpg`,
+        image: `${ORIGIN}${asset("headshot-640.jpg")}`,
         jobTitle: current[0].title,
         description: site.summary.paragraphs[0],
         address: { "@type": "PostalAddress", addressLocality: "Phoenix", addressRegion: "AZ", addressCountry: "US" },
@@ -153,7 +160,7 @@ ${robots}${canonical}
 <meta property="og:title" content="${esc(page.title)}" />
 <meta property="og:description" content="${esc(page.description)}" />
 <meta property="og:url" content="${ORIGIN}${page.path}" />
-<meta property="og:image" content="${ORIGIN}/og.png" />
+<meta property="og:image" content="${ORIGIN}${asset("og.png")}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="${esc(P.name)}, ${esc(P.headline)}" />
@@ -323,7 +330,7 @@ function indexPage() {
             "Benjamin Meadows: operations and sales executive in waterworks distribution, trade contracting, and commercial construction. Former VP, Internal Operations.",
     };
     const body = `<section class="intro with-photo">
-<img class="headshot" src="/headshot-320.jpg" srcset="/headshot-320.jpg 320w, /headshot-640.jpg 640w" sizes="(max-width: 40rem) 6rem, 10rem" width="320" height="320" alt="${esc(P.name)}" fetchpriority="high" />
+<img class="headshot" src="${asset("headshot-320.jpg")}" srcset="${asset("headshot-320.jpg")} 320w, ${asset("headshot-640.jpg")} 640w" sizes="(max-width: 40rem) 6rem, 10rem" width="320" height="320" alt="${esc(P.name)}" fetchpriority="high" />
 <div>
 <h1>${esc(P.name)}</h1>
 <p class="headline">${esc(P.headline)} <span class="dim">${esc(P.location)}</span></p>
@@ -477,9 +484,11 @@ function manifest() {
 
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(DIST, { recursive: true });
-cpSync(join(ROOT, "static"), DIST, { recursive: true, filter: (src) => !/(styles\.css|site\.js|\.DS_Store)$/.test(src) });
-write(CSS_NAME, css);
-write(JS_NAME, js);
+cpSync(join(ROOT, "static"), DIST, {
+    recursive: true,
+    filter: (src) => !src.endsWith(".DS_Store") && !(relative(join(ROOT, "static"), src) in HASHED),
+});
+for (const { body, name } of Object.values(HASHED)) write(name, body);
 
 const built = [indexPage(), recsPage(), speakingPage(), searchPage(), notFoundPage()];
 for (const [page, body] of built) {
