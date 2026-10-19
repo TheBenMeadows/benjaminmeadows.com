@@ -1,0 +1,5 @@
+#!/bin/sh
+# Runs the visibility check before every push. It needs the private fact base,
+# which the Cloudflare build cannot see, so it runs on this machine.
+# Install: cp scripts/pre-push "$(git rev-parse --git-common-dir)/hooks/pre-push"
+exec /opt/homebrew/bin/python3 "$(git rev-parse --show-toplevel)/scripts/check-visibility.py"

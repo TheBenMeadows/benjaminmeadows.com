@@ -396,7 +396,7 @@ function speakingPage() {
     const a = talks.artTech;
     const body = `<section class="intro">
 <h1>Speaking & side work</h1>
-<p>${esc(talks.intro)}</p>
+<p>${esc(talks.intro.text)}</p>
 </section>
 <section aria-labelledby="h-talks"><h2 id="h-talks">Speaking & press</h2>
 ${list}

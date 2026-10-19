@@ -1,6 +1,9 @@
 {
   "_comment": "The professional subset of the speaking list and the art and technology work. The full versions live on thebenmeadows.com; this page points there rather than copying them.",
-  "intro": "A short list of talks and press, and a note on the art and technology work I do outside of my day job. The full record of both lives on my personal site.",
+  "intro": {
+    "text": "A short list of talks and press, and a note on the art and technology work I do outside of my day job. The full record of both lives on my personal site.",
+    "facts": ["tbm-art", "linkedin:projects"]
+  },
   "speaking": [
     {
       "id": "arizona-insider-2026",
