@@ -33,14 +33,17 @@ Cloudflare Pages builds this repository with the build command `node build.mjs` 
 
 Each item in `content/` has a `facts` list. The ids point into a fact base that is not in this repository, where every fact has a source and a visibility. An id that starts with `linkedin:` means that the text is already on the public LinkedIn profile.
 
-After any change to `content/`, build the site and run the check:
+After any change to `content/`, `static/` or `build.mjs`, run the check. It builds the site first:
 
 ```
-node build.mjs
 scripts/check-visibility.py
 ```
 
-The check fails if an item cites no fact, cites a fact that is not public, or if the built pages contain a figure or wording that appears only in non-public facts. The check reads the fact base from `~/Projects/career/facts.json`. Use `--facts` to give it another path. It cannot run without the fact base, so it is not part of the Cloudflare build.
+The check fails if an item with copy cites no fact or a fact that is not public, or if the built site contains a figure, a four-word run or a name that appears only in non-public facts, a phone number from the fact base, an email address other than the contact address, or an image with EXIF, XMP, IPTC or PNG text in it. It reads every file in `dist/`, links included, and takes the fact base from `~/Projects/career/facts.json` unless `--facts` gives another path. The Cloudflare build cannot see the fact base, so a local pre-push hook runs the check instead:
+
+```
+cp scripts/pre-push "$(git rev-parse --git-common-dir)/hooks/pre-push"
+```
 
 `content/site.json` has an `updated` date. Change it when the copy changes. The footer, the sitemap, and the structured data all read it.
 
