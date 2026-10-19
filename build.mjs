@@ -30,7 +30,7 @@ const esc = (s) =>
 // Every link target from content goes through here: it must be an https URL, a
 // mailto address, or a path on this site, and it is escaped for the attribute.
 function href(url) {
-    if (!/^(https:\/\/|mailto:|\/)/.test(url)) throw new Error(`content has a link that is not https, mailto, or a site path: ${url}`);
+    if (!/^(https:\/\/|mailto:|\/(?!\/))/.test(url)) throw new Error(`content has a link that is not https, mailto, or a site path: ${url}`);
     return esc(url);
 }
 if (!/^https:\/\/[a-z0-9.-]+$/.test(ORIGIN)) throw new Error(`site.json origin must be a bare https origin: ${ORIGIN}`);
@@ -84,7 +84,9 @@ function personLd() {
         jobTitle: current[0].title,
         description: site.summary.paragraphs[0],
         address: { "@type": "PostalAddress", addressLocality: "Phoenix", addressRegion: "AZ", addressCountry: "US" },
-        worksFor: current.map((r) => ({ "@type": "Organization", name: r.org })),
+        // A role names its employer by `ldOrg` when the printed name is not the
+        // current legal one; `ldOrg: null` marks a role that is not employment.
+        worksFor: current.filter((r) => r.ldOrg !== null).map((r) => ({ "@type": "Organization", name: r.ldOrg || r.org })),
         alumniOf: [{ "@type": "CollegeOrUniversity", name: "University of North Texas" }],
         hasCredential: site.credentials.flatMap((g) =>
             g.items.map((i) => ({ "@type": "EducationalOccupationalCredential", name: i.text, credentialCategory: g.group })),
@@ -203,7 +205,7 @@ ${body}
 const bulletHtml = (b) => `<li>${b.lead ? `<strong>${esc(b.lead)}.</strong> ` : ""}${esc(b.text)}</li>`;
 
 function roleHtml(r) {
-    return `<article class="entry" id="${r.id}">
+    return `<article class="entry" id="${esc(r.id)}">
 <p class="when">${esc(yearRange(r.start, r.end))}</p>
 <div>
 <h3>${esc(r.org)}${r.place ? ` <span class="place">${esc(r.place)}</span>` : ""}</h3>
@@ -215,7 +217,7 @@ ${r.intro ? `<p>${esc(r.intro)}</p>` : ""}
 </article>`;
 }
 
-const simpleEntry = (id, when, heading, sub, text, extra = "") => `<article class="entry" id="${id}">
+const simpleEntry = (id, when, heading, sub, text, extra = "") => `<article class="entry" id="${esc(id)}">
 <p class="when">${esc(when)}</p>
 <div>
 <h3>${esc(heading)}</h3>
@@ -358,7 +360,7 @@ function recsPage() {
     };
     const items = recs.items
         .map(
-            (r) => `<figure class="rec" id="${r.id}">
+            (r) => `<figure class="rec" id="${esc(r.id)}">
 <blockquote><p>${esc(r.text)}</p></blockquote>
 <figcaption><strong>${esc(r.name)}</strong> <span class="dim">${esc(r.relationship)}${r.org ? `, ${esc(r.org)}` : ""}. ${timeTag(r.date)}</span></figcaption>
 </figure>`,
@@ -383,7 +385,7 @@ function speakingPage() {
     const list = talks.speaking
         .map((t) => {
             const link = t.link ? ` <a href="${href(t.link)}" rel="noopener">${esc(t.linkText)}</a>` : "";
-            return `<article class="entry" id="${t.id}">
+            return `<article class="entry" id="${esc(t.id)}">
 <p class="when">${timeTag(t.date)}</p>
 <div><h3>${esc(t.title)}</h3>
 <p class="title">${esc(t.venue)}</p>
