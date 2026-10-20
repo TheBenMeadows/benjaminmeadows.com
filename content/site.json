@@ -263,6 +263,7 @@
     {
       "id": "dangart",
       "org": "Dangart Group / Meadows EnviroTech",
+      "ldOrg": "Dangart Group",
       "place": "",
       "start": "2010-08",
       "end": "present",
@@ -296,6 +297,7 @@
     {
       "id": "thebenmeadows",
       "org": "TheBenMeadows",
+      "ldOrg": null,
       "place": "",
       "start": "2014-06",
       "end": "present",
