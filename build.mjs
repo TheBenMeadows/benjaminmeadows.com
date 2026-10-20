@@ -231,7 +231,10 @@ function resumeHtml() {
     const creds = site.credentials
         .map(
             (g) => `<div class="entry"><p class="when">${esc(g.group)}</p><ul class="plain">${g.items
-                .map((i) => `<li>${esc(i.text)} <span class="dim">${timeTag(i.date)}</span></li>`)
+                .map((i) => {
+                    const link = i.link ? ` <a href="${href(i.link)}" rel="noopener">${esc(i.linkText)}</a>` : "";
+                    return `<li>${esc(i.text)} <span class="dim">${timeTag(i.date)}</span>${link}</li>`;
+                })
                 .join("")}</ul></div>`,
         )
         .join("\n");

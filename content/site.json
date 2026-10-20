@@ -1,6 +1,6 @@
 {
   "_comment": "Site copy. Every item lists the fact ids it rests on in `facts`. Ids point into a private fact base; `linkedin:<section>` means the text is already live on the public LinkedIn profile. scripts/check-visibility.py fails when an id is unknown or not public.",
-  "updated": "2026-10-17",
+  "updated": "2026-10-19",
   "origin": "https://benjaminmeadows.com",
   "person": {
     "name": "Benjamin Meadows",
@@ -464,7 +464,9 @@
       "items": [
         {
           "text": "Arizona CR-37 Plumbing Contractor, Qualifying Party (ROC 349210, currently inactive)",
-          "date": "2023-12"
+          "date": "2023-12",
+          "link": "https://azroc.my.site.com/AZRoc/s/contractor-search?licenseId=a0o8y000000v91nAAA",
+          "linkText": "ROC record"
         },
         {
           "text": "Arizona Insurance Adjuster (No. 20200827)",
@@ -472,7 +474,9 @@
         },
         {
           "text": "Texas Journeyman Plumber (No. 53100)",
-          "date": "2021-05"
+          "date": "2021-05",
+          "link": "https://vo.licensing.hpc.texas.gov/datamart/searchByLicNumber.do",
+          "linkText": "TSBPE license search"
         }
       ]
     },
