@@ -48,6 +48,7 @@ body {
 
 a {
     color: var(--accent);
+    text-decoration-thickness: from-font;
     text-underline-offset: 0.18em;
 }
 
@@ -79,6 +80,17 @@ ol,
 figure,
 blockquote {
     margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+p,
+li {
+    text-wrap: pretty;
 }
 
 p + p,
