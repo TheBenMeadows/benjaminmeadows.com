@@ -6,6 +6,8 @@
 set -e
 root="$(git rev-parse --show-toplevel)"
 /opt/homebrew/bin/python3 "$root/scripts/check-visibility.py"
+# Branches cut before the type check existed have no tools/check-measure.mjs; they get it on their next merge of main.
+[ -f "$root/tools/check-measure.mjs" ] || exit 0
 (cd "$root" && node build.mjs >/dev/null)
 [ -d "$root/tools/node_modules/playwright-core" ] || { echo "type check cannot run: npm ci --prefix tools" >&2; exit 1; }
 probs="$(node "$root/tools/check-measure.mjs" "$root/dist")"
