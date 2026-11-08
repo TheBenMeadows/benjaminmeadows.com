@@ -1,5 +1,12 @@
 #!/bin/sh
-# Runs the visibility check before every push. It needs the private fact base,
-# which the Cloudflare build cannot see, so it runs on this machine.
+# Runs before every push: the visibility check, which needs the private fact
+# base the Cloudflare build cannot see, then the type check on a fresh build
+# (prose at 16px or more, at most 75 characters a line; tools/check-measure.mjs).
 # Install: cp scripts/pre-push "$(git rev-parse --git-common-dir)/hooks/pre-push"
-exec /opt/homebrew/bin/python3 "$(git rev-parse --show-toplevel)/scripts/check-visibility.py"
+set -e
+root="$(git rev-parse --show-toplevel)"
+/opt/homebrew/bin/python3 "$root/scripts/check-visibility.py"
+(cd "$root" && node build.mjs >/dev/null)
+[ -d "$root/tools/node_modules/playwright-core" ] || { echo "type check cannot run: npm ci --prefix tools" >&2; exit 1; }
+probs="$(node "$root/tools/check-measure.mjs" "$root/dist")"
+[ -z "$probs" ] || { printf 'type check failed:\n%s\n' "$probs" >&2; exit 1; }

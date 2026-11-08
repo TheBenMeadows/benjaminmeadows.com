@@ -2,3 +2,4 @@ dist/
 .DS_Store
 .claude/
 review/
+tools/node_modules/

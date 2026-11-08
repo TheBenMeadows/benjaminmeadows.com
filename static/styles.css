@@ -13,6 +13,8 @@
     --rule: #e4e4e7;
     --accent: #000000;
     --when: 9.5rem;
+    /* One prose measure: about 68 characters a line at 16px. */
+    --measure: 36rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -208,16 +210,23 @@ strong,
     font-size: 0.875rem;
 }
 
+/* ---- measure: running prose stops at --measure whatever column it sits in */
+
+main p,
+.entry li {
+    max-width: var(--measure);
+}
+
 /* ---- intro */
 
 .intro {
     padding: 3rem 0 0.5rem;
-    max-width: 44rem;
+    max-width: var(--measure);
 }
 
 .intro.with-photo {
     display: grid;
-    grid-template-columns: minmax(0, 44rem) 10rem;
+    grid-template-columns: minmax(0, var(--measure)) 10rem;
     justify-content: space-between;
     gap: 2rem;
     max-width: none;
@@ -333,7 +342,7 @@ ul.plain li:first-child {
 }
 
 .results {
-    max-width: 50rem;
+    max-width: var(--measure);
 }
 
 /* ---- format switch: two radios, no script needed */
@@ -497,7 +506,7 @@ ul.plain li:first-child {
 .rec blockquote {
     grid-column: 2;
     grid-row: 1;
-    max-width: 44rem;
+    max-width: var(--measure);
 }
 
 .rec figcaption {
