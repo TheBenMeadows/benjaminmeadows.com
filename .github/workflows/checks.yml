@@ -16,6 +16,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Build (node build.mjs, the Cloudflare Pages build command)
+        run: node build.mjs
       - name: css-touch-lint (hover, focus ring, :invalid, Tailwind flag, input size)
         run: python3 scripts/css-touch-lint.py
       - name: gitleaks (secrets in the pushed commits)
