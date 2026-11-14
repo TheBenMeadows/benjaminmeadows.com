@@ -210,9 +210,10 @@ strong,
     font-size: 0.875rem;
 }
 
-/* ---- measure: running prose stops at --measure whatever column it sits in */
+/* ---- measure: running prose stops at --measure whatever column it sits in;
+   an entry title is a heading line, not prose, and runs the full column */
 
-main p,
+main p:not(.title),
 .entry li {
     max-width: var(--measure);
 }
