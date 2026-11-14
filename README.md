@@ -49,7 +49,7 @@ cp scripts/pre-push "$(git rev-parse --git-common-dir)/hooks/pre-push"
 
 ## How the pages work
 
-- The Resume and Timeline formats are two radio inputs and CSS. The timeline filters are checkboxes and `:has()`. Neither needs the script.
+- The Resume and Timeline formats are two radio inputs in a fieldset and `:has()`. The timeline filters are checkboxes and `:has()`. Neither needs the script.
 - `site.js` does two things. It keeps `#timeline` in the address so that the timeline can be linked, and it runs the search page against `search-index.json`.
 - The Content-Security-Policy allows scripts and styles from this origin only. Do not add inline scripts or styles.
 - The print stylesheet prints the resume format on its own.
