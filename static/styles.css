@@ -312,9 +312,11 @@ time {
     font-size: 0.875rem;
 }
 
+/* The city sits on its own line under the company, so a long name never
+   leaves the city as a stray last word. */
 .place {
+    display: block;
     font-size: 0.875rem;
-    margin-left: 0.35rem;
 }
 
 .entry ul,
