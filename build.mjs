@@ -168,7 +168,7 @@ ${robots}${canonical}
 <meta property="og:image:alt" content="${esc(P.name)}, ${esc(P.headline)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<link rel="preload" href="/fonts/publicsans-v1.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/publicsans-v2.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/${CSS_NAME}" />
 <script type="application/ld+json">${graph(page)}</script>
 </head>
