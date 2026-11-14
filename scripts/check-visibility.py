@@ -193,18 +193,20 @@ def site_text():
 
 
 def quoted_public(facts):
-    """Verbatim recommendation text whose own citation is public.
+    """Verbatim recommendation text that is already public at its source.
 
     The fact base records that these recommendations exist, not their wording, so
     their wording has to be counted as public here or it collides with ordinary
-    phrases in non-public quotes.
+    phrases in non-public quotes. An item counts when it is a verbatim quote from
+    the public LinkedIn profile, or when it cites facts of its own and every one
+    is public. The file's document-level citation does not count for an item.
     """
     doc = json.loads((ROOT / "content/recommendations.json").read_text())
-    shared = doc.get("facts", [])
     out = []
     for item in doc["items"]:
-        ids = item.get("facts", shared)
-        if ids and all(facts.get(i, {}).get("visibility") == "public" for i in ids):
+        ids = item.get("facts", [])
+        own = bool(ids) and all(facts.get(i, {}).get("visibility") == "public" for i in ids)
+        if own or item.get("source") == "linkedin":
             out.append(item["text"])
     return " ".join(out)
 

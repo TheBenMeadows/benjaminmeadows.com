@@ -344,9 +344,10 @@ ${site.summary.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("\n")}
 </div>
 </section>
 <div class="views">
+<fieldset class="switch"><legend class="vh">Format</legend>
 <input type="radio" name="view" id="view-resume" checked />
 <input type="radio" name="view" id="view-timeline" />
-<p class="switch"><label for="view-resume">Resume</label><label for="view-timeline">Timeline</label></p>
+<label for="view-resume">Resume</label><label for="view-timeline">Timeline</label></fieldset>
 ${resumeHtml()}
 ${timelineHtml()}
 </div>`;

@@ -347,7 +347,7 @@ ul.plain li:first-child {
 
 /* ---- format switch: two radios, no script needed */
 
-.views > input {
+.switch > input {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -358,7 +358,8 @@ ul.plain li:first-child {
 
 .switch {
     display: inline-flex;
-    margin-top: 2.5rem;
+    margin: 2.5rem 0 0;
+    padding: 0;
     border: 1px solid var(--head);
 }
 
@@ -369,20 +370,20 @@ ul.plain li:first-child {
     font-weight: 600;
 }
 
-#view-resume:checked ~ .switch label[for="view-resume"],
-#view-timeline:checked ~ .switch label[for="view-timeline"] {
+#view-resume:checked ~ label[for="view-resume"],
+#view-timeline:checked ~ label[for="view-timeline"] {
     background: var(--head);
     color: var(--bg);
 }
 
-#view-resume:focus-visible ~ .switch label[for="view-resume"],
-#view-timeline:focus-visible ~ .switch label[for="view-timeline"] {
+#view-resume:focus-visible ~ label[for="view-resume"],
+#view-timeline:focus-visible ~ label[for="view-timeline"] {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
 
-#view-resume:checked ~ .view-timeline,
-#view-timeline:checked ~ .view-resume {
+.views:has(#view-resume:checked) > .view-timeline,
+.views:has(#view-timeline:checked) > .view-resume {
     display: none;
 }
 
