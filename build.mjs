@@ -115,7 +115,8 @@ function graph(page) {
             description: page.description,
             isPartOf: { "@id": `${ORIGIN}/#website` },
             about: { "@id": `${ORIGIN}/#person` },
-            dateModified: site.updated,
+            // Google's ProfilePage markup rejects a bare date; Phoenix is UTC-7 all year.
+            dateModified: `${site.updated}T00:00:00-07:00`,
             ...(page.path === "/" ? { mainEntity: { "@id": `${ORIGIN}/#person` } } : {}),
         },
         page.path === "/" ? personLd() : { "@type": "Person", "@id": `${ORIGIN}/#person`, name: P.name, url: `${ORIGIN}/` },
