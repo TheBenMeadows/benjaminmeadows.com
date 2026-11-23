@@ -246,6 +246,11 @@ function resumeHtml() {
             return simpleEntry(a.id, yearRange(a.start, a.end), a.org, a.role, "", text);
         })
         .join("\n");
+    const pubs = site.publications
+        .map((p) =>
+            simpleEntry(p.id, fmtDate(p.date), p.title, p.kind, "", `<p><a href="${href(p.link)}" rel="noopener">${esc(p.linkText)}</a></p>`),
+        )
+        .join("\n");
     const skills = site.skills.groups
         .map((g) => `<div class="entry"><p class="when">${esc(g.label)}</p><p>${g.items.map(esc).join(", ")}</p></div>`)
         .join("\n");
@@ -256,6 +261,8 @@ function resumeHtml() {
 ${site.roles.map(roleHtml).join("\n")}</section>
 <section aria-labelledby="h-tech"><h2 id="h-tech">Technology</h2>
 <ul class="results">${site.technology.items.map((t) => `<li>${esc(t)}</li>`).join("\n")}</ul></section>
+<section aria-labelledby="h-pubs"><h2 id="h-pubs">Publications</h2>
+${pubs}</section>
 <section aria-labelledby="h-edu"><h2 id="h-edu">Education</h2>
 ${edu}</section>
 <section aria-labelledby="h-cred"><h2 id="h-cred">Licenses & certifications</h2>
@@ -442,6 +449,7 @@ function searchDocs() {
         add(`/#${r.id}`, r.org, "Experience", text.filter(Boolean).join(" "));
     }
     add("/#h-tech", "Technology", "Resume", site.technology.items.join(" "));
+    for (const p of site.publications) add(`/#${p.id}`, p.title, "Publications", `${p.kind} ${p.linkText}`);
     for (const e of site.education) add(`/#${e.id}`, e.org, "Education", e.text);
     for (const g of site.credentials) add("/#h-cred", g.group, "Licenses & certifications", g.items.map((i) => i.text).join(". "));
     for (const a of site.affiliations) add(`/#${a.id}`, a.org, "Boards, memberships & service", `${a.role} ${a.text}`);
