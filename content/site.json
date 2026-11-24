@@ -1,6 +1,6 @@
 {
   "_comment": "Site copy. Every item lists the fact ids it rests on in `facts`. Ids point into a private fact base; `linkedin:<section>` means the text is already live on the public LinkedIn profile. scripts/check-visibility.py fails when an id is unknown or not public.",
-  "updated": "2026-10-19",
+  "updated": "2026-11-24",
   "origin": "https://benjaminmeadows.com",
   "person": {
     "name": "Benjamin Meadows",
@@ -721,5 +721,51 @@
       "Built and led Gibson's in-house software, data, and IT team: applications used daily by field crews, BI dashboards used by every executive, and network security.",
       "SQL, R, Power BI, Metabase, SAGE 100 ERP, ServiceTitan. Server and network administration for a multi-office company."
     ]
-  }
+  },
+  "publications": [
+    {
+      "id": "pub-auditors",
+      "title": "Calibrating Auditors of Code-Review Claims, and Auditing Their Labels",
+      "kind": "Preprint",
+      "date": "2026-11",
+      "link": "https://doi.org/10.5281/zenodo.24449094",
+      "linkText": "doi 10.5281/zenodo.24449094",
+      "facts": [
+        "pub-auditors"
+      ]
+    },
+    {
+      "id": "pub-packing",
+      "title": "packing-records: candidate improvements to nine record tables for packing, energy and Thomson problems",
+      "kind": "Data set",
+      "date": "2026-11",
+      "link": "https://doi.org/10.5281/zenodo.23906181",
+      "linkText": "doi 10.5281/zenodo.23906181",
+      "facts": [
+        "pub-packing"
+      ]
+    },
+    {
+      "id": "pub-essentialism",
+      "title": "essentialism: An On-Chain Generative Work That Forgets Two Photographs",
+      "kind": "Preprint",
+      "date": "2026-10",
+      "link": "https://doi.org/10.5281/zenodo.23333265",
+      "linkText": "doi 10.5281/zenodo.23333265",
+      "facts": [
+        "pub-essentialism"
+      ]
+    },
+    {
+      "id": "pub-rrf",
+      "title": "The 1/k Ceiling in Reciprocal Rank Fusion: A Zero-Overlap Test for Hybrid Retrieval",
+      "kind": "Preprint",
+      "date": "2026-10",
+      "link": "https://doi.org/10.5281/zenodo.23331138",
+      "linkText": "doi 10.5281/zenodo.23331138",
+      "facts": [
+        "pub-rrf"
+      ]
+    }
+  ]
 }
