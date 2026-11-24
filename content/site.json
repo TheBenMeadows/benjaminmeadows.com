@@ -1,6 +1,6 @@
 {
   "_comment": "Site copy. Every item lists the fact ids it rests on in `facts`. Ids point into a private fact base; `linkedin:<section>` means the text is already live on the public LinkedIn profile. scripts/check-visibility.py fails when an id is unknown or not public.",
-  "updated": "2026-11-22",
+  "updated": "2026-11-24",
   "origin": "https://benjaminmeadows.com",
   "person": {
     "name": "Benjamin Meadows",
