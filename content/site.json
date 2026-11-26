@@ -25,7 +25,8 @@
       "gib-reports-direct",
       "research-areas",
       "research-cohn-tables",
-      "research-brouwer-bounds"
+      "research-brouwer-bounds",
+      "research-packomania-tables"
     ],
     "paragraphs": [
       "Twenty years in waterworks distribution, trade contracting, and commercial construction, on both the operations and revenue side.",
@@ -35,7 +36,7 @@
         "text": "I also do",
         "linkText": "independent research",
         "link": "/#h-pubs",
-        "after": "in discrete geometry and coding theory; my results are listed in public reference tables kept at MIT and Eindhoven."
+        "after": "in discrete geometry and coding theory; my results are listed in public reference tables kept at MIT, Eindhoven and Magdeburg."
       }
     ]
   },
@@ -793,11 +794,12 @@
       "linkText": "doi 10.5281/zenodo.23906181",
       "facts": [
         "pub-packing",
-        "research-cohn-tables"
+        "research-cohn-tables",
+        "research-packomania-tables"
       ],
       "ldType": "Dataset",
       "published": "2026-11-02",
-      "text": "Cited in two of Henry Cohn's tables at MIT; the row counts are under Research results below.",
+      "text": "Cited in two of Henry Cohn's tables at MIT and two of Eckard Specht's Packomania tables at Magdeburg; the row counts are under Research results below.",
       "more": [
         {
           "linkText": "code on GitHub",
@@ -835,7 +837,8 @@
   "researchResults": {
     "facts": [
       "research-brouwer-bounds",
-      "research-cohn-tables"
+      "research-cohn-tables",
+      "research-packomania-tables"
     ],
     "heading": "Research results",
     "items": [
@@ -873,6 +876,25 @@
         ],
         "facts": [
           "research-cohn-tables",
+          "pub-packing"
+        ]
+      },
+      {
+        "id": "res-packomania",
+        "title": "Citations in Eckard Specht's Packomania tables",
+        "kind": "Table results",
+        "date": "2026-11",
+        "text": "Eckard Specht's Packomania tables at Otto von Guericke University Magdeburg cite my packing-records data set on 317 rows: 239 packings of equal spheres in a cube and 78 packings of equal balls in a 4-dimensional ball.",
+        "link": "https://packomania.com/scu/scu.html",
+        "linkText": "spheres in a cube table",
+        "more": [
+          {
+            "linkText": "balls in a 4-dimensional ball table",
+            "link": "https://packomania.com/hsp4/hsp4.html"
+          }
+        ],
+        "facts": [
+          "research-packomania-tables",
           "pub-packing"
         ]
       }
