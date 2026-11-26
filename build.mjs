@@ -91,10 +91,28 @@ function personLd() {
         hasCredential: site.credentials.flatMap((g) =>
             g.items.map((i) => ({ "@type": "EducationalOccupationalCredential", name: i.text, credentialCategory: g.group })),
         ),
-        knowsAbout: site.skills.groups.filter((g) => g.label !== "Languages").flatMap((g) => g.items),
+        knowsAbout: [...site.skills.groups.filter((g) => g.label !== "Languages").flatMap((g) => g.items), ...site.research.topics],
         knowsLanguage: ["English", "Spanish", "Latin", "Russian"],
-        sameAs: [P.linkedin, P.personalSite, "https://github.com/TheBenMeadows"],
+        sameAs: [...new Set([P.linkedin, P.personalSite, ...site.research.profiles.filter((r) => r.sameAs).map((r) => r.link)])],
     };
+}
+
+// One node per publication that has an `ldType`; its link must be the DOI.
+function worksLd() {
+    return site.publications
+        .filter((p) => p.ldType)
+        .map((p) => {
+            if (!p.link.startsWith("https://doi.org/")) throw new Error(`publication ${p.id} has an ldType but its link is not a DOI`);
+            return {
+                "@type": p.ldType,
+                "@id": `${ORIGIN}/#${p.id}`,
+                name: p.title,
+                url: p.link,
+                identifier: { "@type": "PropertyValue", propertyID: "DOI", value: p.link.slice("https://doi.org/".length) },
+                datePublished: p.published,
+                author: { "@id": `${ORIGIN}/#person` },
+            };
+        });
 }
 
 function graph(page) {
@@ -120,6 +138,7 @@ function graph(page) {
             ...(page.path === "/" ? { mainEntity: { "@id": `${ORIGIN}/#person` } } : {}),
         },
         page.path === "/" ? personLd() : { "@type": "Person", "@id": `${ORIGIN}/#person`, name: P.name, url: `${ORIGIN}/` },
+        ...(page.path === "/" ? worksLd() : []),
     ];
     if (page.path !== "/" && !page.noindex) {
         nodes.push({
@@ -138,6 +157,7 @@ function graph(page) {
 
 const NAV = [
     ["/", "Resume"],
+    ["/#h-pubs", "Publications"],
     ["/recommendations/", "Recommendations"],
     ["/speaking/", "Speaking & side work"],
 ];
@@ -247,10 +267,14 @@ function resumeHtml() {
         })
         .join("\n");
     const pubs = site.publications
-        .map((p) =>
-            simpleEntry(p.id, fmtDate(p.date), p.title, p.kind, "", `<p><a href="${href(p.link)}" rel="noopener">${esc(p.linkText)}</a></p>`),
-        )
+        .map((p) => {
+            const links = [p, ...(p.more || [])].map((l) => `<a href="${href(l.link)}" rel="noopener">${esc(l.linkText)}</a>`).join(", ");
+            return simpleEntry(p.id, fmtDate(p.date), p.title, p.kind, p.text || "", `<p>${links}</p>`);
+        })
         .join("\n");
+    const research = site.research;
+    const profiles = research.profiles.map((l) => `<a href="${href(l.link)}" rel="noopener">${esc(l.linkText)}</a>`);
+    const profileLine = `<p>${esc(research.lead)} ${profiles.slice(0, -1).join(", ")}, and ${profiles.at(-1)}.</p>`;
     const skills = site.skills.groups
         .map((g) => `<div class="entry"><p class="when">${esc(g.label)}</p><p>${g.items.map(esc).join(", ")}</p></div>`)
         .join("\n");
@@ -262,6 +286,7 @@ ${site.roles.map(roleHtml).join("\n")}</section>
 <section aria-labelledby="h-tech"><h2 id="h-tech">Technology</h2>
 <ul class="results">${site.technology.items.map((t) => `<li>${esc(t)}</li>`).join("\n")}</ul></section>
 <section aria-labelledby="h-pubs"><h2 id="h-pubs">Publications</h2>
+${profileLine}
 ${pubs}</section>
 <section aria-labelledby="h-edu"><h2 id="h-edu">Education</h2>
 ${edu}</section>
@@ -294,7 +319,7 @@ function timelineItems() {
         items.push({ date: a.start, kind: "board", title: a.short || a.role, org: a.org, span: fmtRange(a.start, a.end), summary: a.text, href: `/#${a.id}` });
     }
     for (const t of talks.speaking) {
-        items.push({ date: t.date, kind: "speaking", title: t.title, org: t.venue, summary: t.kind, href: `/speaking/#${t.id}` });
+        items.push({ date: t.date, kind: t.timelineKind || "speaking", title: t.title, org: t.venue, summary: t.kind, href: `/speaking/#${t.id}` });
     }
     items.push(...site.milestones);
     for (const it of items) {
@@ -449,7 +474,8 @@ function searchDocs() {
         add(`/#${r.id}`, r.org, "Experience", text.filter(Boolean).join(" "));
     }
     add("/#h-tech", "Technology", "Resume", site.technology.items.join(" "));
-    for (const p of site.publications) add(`/#${p.id}`, p.title, "Publications", `${p.kind} ${p.linkText}`);
+    add("/#h-pubs", "Research profiles", "Publications", `${site.research.lead} ${site.research.profiles.map((l) => l.linkText).join(", ")}`);
+    for (const p of site.publications) add(`/#${p.id}`, p.title, "Publications", [p.kind, p.text, p.linkText].filter(Boolean).join(" "));
     for (const e of site.education) add(`/#${e.id}`, e.org, "Education", e.text);
     for (const g of site.credentials) add("/#h-cred", g.group, "Licenses & certifications", g.items.map((i) => i.text).join(". "));
     for (const a of site.affiliations) add(`/#${a.id}`, a.org, "Boards, memberships & service", `${a.role} ${a.text}`);

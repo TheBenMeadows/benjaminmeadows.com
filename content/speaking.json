@@ -6,6 +6,18 @@
   },
   "speaking": [
     {
+      "id": "devin-ambassador",
+      "date": "2026-09",
+      "title": "Devin Ambassador for Phoenix",
+      "venue": "Cognition",
+      "kind": "Community role",
+      "timelineKind": "board",
+      "text": "Since September 2026.",
+      "link": "https://devin.ai/community",
+      "linkText": "Devin community",
+      "facts": ["devin-ambassador"]
+    },
+    {
       "id": "arizona-insider-2026",
       "date": "2026-05",
       "title": "\"Mission Monday: Ben Meadows\"",

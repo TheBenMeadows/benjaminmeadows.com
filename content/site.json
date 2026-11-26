@@ -1,6 +1,6 @@
 {
   "_comment": "Site copy. Every item lists the fact ids it rests on in `facts`. Ids point into a private fact base; `linkedin:<section>` means the text is already live on the public LinkedIn profile. scripts/check-visibility.py fails when an id is unknown or not public.",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "origin": "https://benjaminmeadows.com",
   "person": {
     "name": "Benjamin Meadows",
@@ -22,12 +22,17 @@
       "dan-reps",
       "hc-role",
       "svk-scope",
-      "gib-reports-direct"
+      "gib-reports-direct",
+      "research-areas",
+      "research-cohn-tables",
+      "research-brouwer-bounds",
+      "pub-packing"
     ],
     "paragraphs": [
       "Twenty years in waterworks distribution, trade contracting, and commercial construction, on both the operations and revenue side.",
       "As Vice President, Internal Operations at Gibson Plumbing, ran purchasing, warehousing, fleet, facilities, IT, warranty, and risk management through six department heads as revenue roughly tripled. P&L experience jointly on a $20M distribution branch and as an owner of two companies. Since 2022, I have sold SUNVEK Roofing's most complex commercial work, with full pricing and scope authority on my own projects.",
-      "Built departments, an IT team, SOPs, a manufacturers' sales representative network, and two companies."
+      "Built departments, an IT team, SOPs, a manufacturers' sales representative network, and two companies.",
+      "I also do independent research in discrete geometry and coding theory, and in evaluating LLM agents and hybrid retrieval. Henry Cohn's tables at MIT cite my packing-records data set for 1,661 Grassmannian packings and 44 harmonic energy configurations, and Andries Brouwer's code tables credit me with seven new lower bounds."
     ]
   },
   "consulting": {
@@ -722,7 +727,63 @@
       "SQL, R, Power BI, Metabase, SAGE 100 ERP, ServiceTitan. Server and network administration for a multi-office company."
     ]
   },
+  "research": {
+    "facts": [
+      "research-profiles",
+      "research-areas"
+    ],
+    "lead": "Research profiles:",
+    "profiles": [
+      {
+        "linkText": "ORCID",
+        "link": "https://orcid.org/0009-0007-9698-0910",
+        "sameAs": true
+      },
+      {
+        "linkText": "Google Scholar",
+        "link": "https://scholar.google.com/citations?user=4RZaiisAAAAJ",
+        "sameAs": true
+      },
+      {
+        "linkText": "Zenodo",
+        "link": "https://zenodo.org/search?q=creators.orcid%3A0009-0007-9698-0910"
+      },
+      {
+        "linkText": "GitHub",
+        "link": "https://github.com/TheBenMeadows",
+        "sameAs": true
+      },
+      {
+        "linkText": "my papers page",
+        "link": "https://thebenmeadows.com/papers/"
+      }
+    ],
+    "topics": [
+      "Discrete geometry",
+      "Coding theory",
+      "Evaluation of LLM agents",
+      "Hybrid retrieval"
+    ]
+  },
   "publications": [
+    {
+      "id": "res-brouwer",
+      "title": "Seven new lower bounds in Andries Brouwer's tables of bounds for error-correcting codes",
+      "kind": "Table results",
+      "date": "2026-11",
+      "text": "Each bound is credited to me by name. One is a ternary code of length 15 and minimum distance 10 with 31 words; the table's previous bound was 27, from a 1995 code.",
+      "link": "https://aeb.win.tue.nl/codes/ternary-1.html",
+      "linkText": "Brouwer's ternary table",
+      "more": [
+        {
+          "linkText": "search code on GitHub",
+          "link": "https://github.com/TheBenMeadows/code-table-search"
+        }
+      ],
+      "facts": [
+        "research-brouwer-bounds"
+      ]
+    },
     {
       "id": "pub-auditors",
       "title": "Calibrating Auditors of Code-Review Claims, and Auditing Their Labels",
@@ -732,7 +793,9 @@
       "linkText": "doi 10.5281/zenodo.24449094",
       "facts": [
         "pub-auditors"
-      ]
+      ],
+      "ldType": "ScholarlyArticle",
+      "published": "2026-11-22"
     },
     {
       "id": "pub-packing",
@@ -742,7 +805,17 @@
       "link": "https://doi.org/10.5281/zenodo.23906181",
       "linkText": "doi 10.5281/zenodo.23906181",
       "facts": [
-        "pub-packing"
+        "pub-packing",
+        "research-cohn-tables"
+      ],
+      "ldType": "Dataset",
+      "published": "2026-11-02",
+      "text": "Cited in Henry Cohn's table of Grassmannian packings (1,661 of 3,511 rows) and his harmonic energy table (44 rows).",
+      "more": [
+        {
+          "linkText": "code on GitHub",
+          "link": "https://github.com/TheBenMeadows/packing-records"
+        }
       ]
     },
     {
@@ -754,7 +827,9 @@
       "linkText": "doi 10.5281/zenodo.23333265",
       "facts": [
         "pub-essentialism"
-      ]
+      ],
+      "ldType": "ScholarlyArticle",
+      "published": "2026-10-13"
     },
     {
       "id": "pub-rrf",
@@ -765,7 +840,9 @@
       "linkText": "doi 10.5281/zenodo.23331138",
       "facts": [
         "pub-rrf"
-      ]
+      ],
+      "ldType": "ScholarlyArticle",
+      "published": "2026-10-12"
     }
   ]
 }
