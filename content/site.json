@@ -25,14 +25,18 @@
       "gib-reports-direct",
       "research-areas",
       "research-cohn-tables",
-      "research-brouwer-bounds",
-      "pub-packing"
+      "research-brouwer-bounds"
     ],
     "paragraphs": [
       "Twenty years in waterworks distribution, trade contracting, and commercial construction, on both the operations and revenue side.",
       "As Vice President, Internal Operations at Gibson Plumbing, ran purchasing, warehousing, fleet, facilities, IT, warranty, and risk management through six department heads as revenue roughly tripled. P&L experience jointly on a $20M distribution branch and as an owner of two companies. Since 2022, I have sold SUNVEK Roofing's most complex commercial work, with full pricing and scope authority on my own projects.",
       "Built departments, an IT team, SOPs, a manufacturers' sales representative network, and two companies.",
-      "I also do independent research in discrete geometry and coding theory, and in evaluating LLM agents and hybrid retrieval. Henry Cohn's tables at MIT cite my packing-records data set for 1,661 Grassmannian packings and 44 harmonic energy configurations, and Andries Brouwer's code tables credit me with seven new lower bounds."
+      {
+        "text": "I also do",
+        "linkText": "independent research",
+        "link": "/#h-pubs",
+        "after": "in discrete geometry and coding theory; my results are listed in public reference tables kept at MIT and Eindhoven."
+      }
     ]
   },
   "consulting": {
@@ -45,7 +49,7 @@
   "results": [
     {
       "lead": "Growth",
-      "text": "Ran Gibson's internal operations as revenue tripled, from roughly $27M to a projected $80M+, across the San Antonio, Austin, DFW, and Houston markets.",
+      "text": "Ran Gibson's internal operations as revenue tripled, from roughly $27M to $80M+, across the San Antonio, Austin, DFW, and Houston markets.",
       "facts": [
         "gib-growth",
         "gib-role",
@@ -767,24 +771,6 @@
   },
   "publications": [
     {
-      "id": "res-brouwer",
-      "title": "Seven new lower bounds in Andries Brouwer's tables of bounds for error-correcting codes",
-      "kind": "Table results",
-      "date": "2026-11",
-      "text": "Each bound is credited to me by name. One is a ternary code of length 15 and minimum distance 10 with 31 words; the table's previous bound was 27, from a 1995 code.",
-      "link": "https://aeb.win.tue.nl/codes/ternary-1.html",
-      "linkText": "Brouwer's ternary table",
-      "more": [
-        {
-          "linkText": "search code on GitHub",
-          "link": "https://github.com/TheBenMeadows/code-table-search"
-        }
-      ],
-      "facts": [
-        "research-brouwer-bounds"
-      ]
-    },
-    {
       "id": "pub-auditors",
       "title": "Calibrating Auditors of Code-Review Claims, and Auditing Their Labels",
       "kind": "Preprint",
@@ -800,6 +786,7 @@
     {
       "id": "pub-packing",
       "title": "packing-records: candidate improvements to nine record tables for packing, energy and Thomson problems",
+      "description": "Explicit configurations for nine public record tables in packing, energy and Thomson problems: sphere and ball packings, spherical codes, Grassmannian packings, and low-energy point sets on the sphere. Each file is in its table's own format, and a Python checker in the data set recomputes every value with exact rational arithmetic.",
       "kind": "Data set",
       "date": "2026-11",
       "link": "https://doi.org/10.5281/zenodo.23906181",
@@ -810,7 +797,7 @@
       ],
       "ldType": "Dataset",
       "published": "2026-11-02",
-      "text": "Cited in Henry Cohn's table of Grassmannian packings (1,661 of 3,511 rows) and his harmonic energy table (44 rows).",
+      "text": "Cited in two of Henry Cohn's tables at MIT; the row counts are under Research results below.",
       "more": [
         {
           "linkText": "code on GitHub",
@@ -844,5 +831,51 @@
       "ldType": "ScholarlyArticle",
       "published": "2026-10-12"
     }
-  ]
+  ],
+  "researchResults": {
+    "facts": [
+      "research-brouwer-bounds",
+      "research-cohn-tables"
+    ],
+    "heading": "Research results",
+    "items": [
+      {
+        "id": "res-brouwer",
+        "title": "Seven new lower bounds in Andries Brouwer's tables of bounds for error-correcting codes",
+        "kind": "Table results",
+        "date": "2026-11",
+        "text": "Each bound is credited to me by name. One is a ternary code of length 15 and minimum distance 10 with 31 words; the table's previous bound was 27, from a 1995 code.",
+        "link": "https://aeb.win.tue.nl/codes/ternary-1.html",
+        "linkText": "Brouwer's ternary table",
+        "more": [
+          {
+            "linkText": "search code on GitHub",
+            "link": "https://github.com/TheBenMeadows/code-table-search"
+          }
+        ],
+        "facts": [
+          "research-brouwer-bounds"
+        ]
+      },
+      {
+        "id": "res-cohn",
+        "title": "Citations in Henry Cohn's tables of Grassmannian packings and harmonic energies",
+        "kind": "Table results",
+        "date": "2026-11",
+        "text": "Henry Cohn's tables at MIT cite my packing-records data set on 1,661 of the 3,511 rows of the Grassmannian packings table and on 44 rows of the harmonic energy table.",
+        "link": "https://cohn.mit.edu/grassmannian/",
+        "linkText": "Cohn's Grassmannian table",
+        "more": [
+          {
+            "linkText": "harmonic energy table",
+            "link": "https://cohn.mit.edu/harmonic-energy/"
+          }
+        ],
+        "facts": [
+          "research-cohn-tables",
+          "pub-packing"
+        ]
+      }
+    ]
+  }
 }

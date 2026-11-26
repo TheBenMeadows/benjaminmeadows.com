@@ -76,6 +76,7 @@ a:active {
 h1,
 h2,
 h3,
+h4,
 p,
 ul,
 ol,
@@ -86,7 +87,8 @@ blockquote {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     text-wrap: balance;
 }
 
@@ -103,6 +105,7 @@ p + ul {
 
 h1,
 h3,
+h4,
 strong,
 .title,
 .t-title {
@@ -277,9 +280,20 @@ h2 {
     color: var(--dim);
 }
 
-h3 {
+h3,
+h4 {
     font-size: 1.0625rem;
     line-height: 1.35;
+}
+
+/* A subheading inside a section, set like the section heading without its rule. */
+h3.subhead {
+    margin: 2rem 0 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--dim);
 }
 
 .entry {
@@ -656,6 +670,7 @@ mark {
     }
 
     h3,
+    h4,
     .title {
         break-after: avoid;
     }

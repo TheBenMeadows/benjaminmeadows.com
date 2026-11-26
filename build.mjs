@@ -82,7 +82,7 @@ function personLd() {
         url: `${ORIGIN}/`,
         image: `${ORIGIN}${asset("headshot-640.jpg")}`,
         jobTitle: current[0].title,
-        description: site.summary.paragraphs[0],
+        description: paraText(site.summary.paragraphs[0]),
         address: { "@type": "PostalAddress", addressLocality: "Phoenix", addressRegion: "AZ", addressCountry: "US" },
         // A role names its employer by `ldOrg` when the printed name is not the
         // current legal one; `ldOrg: null` marks a role that is not employment.
@@ -98,19 +98,26 @@ function personLd() {
 }
 
 // One node per publication that has an `ldType`; its link must be the DOI.
+// Google's Dataset markup requires a description of 50 to 5000 characters and
+// names the maker `creator`, where an article uses `author`.
 function worksLd() {
     return site.publications
         .filter((p) => p.ldType)
         .map((p) => {
             if (!p.link.startsWith("https://doi.org/")) throw new Error(`publication ${p.id} has an ldType but its link is not a DOI`);
+            const dataset = p.ldType === "Dataset";
+            if (dataset && !(p.description?.length >= 50 && p.description.length <= 5000)) {
+                throw new Error(`publication ${p.id} is a Dataset and needs a description of 50 to 5000 characters`);
+            }
             return {
                 "@type": p.ldType,
                 "@id": `${ORIGIN}/#${p.id}`,
                 name: p.title,
+                ...(p.description ? { description: p.description } : {}),
                 url: p.link,
                 identifier: { "@type": "PropertyValue", propertyID: "DOI", value: p.link.slice("https://doi.org/".length) },
                 datePublished: p.published,
-                author: { "@id": `${ORIGIN}/#person` },
+                [dataset ? "creator" : "author"]: { "@id": `${ORIGIN}/#person` },
             };
         });
 }
@@ -223,6 +230,10 @@ ${body}
 
 // ---------------------------------------------------------------- resume view
 
+// A summary paragraph is a string, or { text, linkText, link, after } when a link sits inside it.
+const paraText = (p) => (typeof p === "string" ? p : `${p.text} ${p.linkText} ${p.after}`);
+const paraHtml = (p) => (typeof p === "string" ? esc(p) : `${esc(p.text)} <a href="${href(p.link)}">${esc(p.linkText)}</a> ${esc(p.after)}`);
+
 const bulletHtml = (b) => `<li>${b.lead ? `<strong>${esc(b.lead)}.</strong> ` : ""}${esc(b.text)}</li>`;
 
 function roleHtml(r) {
@@ -238,10 +249,10 @@ ${r.intro ? `<p>${esc(r.intro)}</p>` : ""}
 </article>`;
 }
 
-const simpleEntry = (id, when, heading, sub, text, extra = "") => `<article class="entry" id="${esc(id)}">
+const simpleEntry = (id, when, heading, sub, text, extra = "", level = 3) => `<article class="entry" id="${esc(id)}">
 <p class="when">${esc(when)}</p>
 <div>
-<h3>${esc(heading)}</h3>
+<h${level}>${esc(heading)}</h${level}>
 ${sub ? `<p class="title">${esc(sub)}</p>` : ""}
 ${text ? `<p>${esc(text)}</p>` : ""}${extra}
 </div>
@@ -266,15 +277,19 @@ function resumeHtml() {
             return simpleEntry(a.id, yearRange(a.start, a.end), a.org, a.role, "", text);
         })
         .join("\n");
-    const pubs = site.publications
-        .map((p) => {
-            const links = [p, ...(p.more || [])].map((l) => `<a href="${href(l.link)}" rel="noopener">${esc(l.linkText)}</a>`).join(", ");
-            return simpleEntry(p.id, fmtDate(p.date), p.title, p.kind, p.text || "", `<p>${links}</p>`);
-        })
-        .join("\n");
+    const workEntry = (level) => (p) => {
+        const links = [p, ...(p.more || [])].map((l) => `<a href="${href(l.link)}" rel="noopener">${esc(l.linkText)}</a>`).join(", ");
+        return simpleEntry(p.id, fmtDate(p.date), p.title, p.kind, p.text || "", `<p>${links}</p>`, level);
+    };
+    const pubs = site.publications.map(workEntry(3)).join("\n");
+    const results = site.researchResults;
+    const resultsHtml = `<h3 class="subhead" id="h-research-results">${esc(results.heading)}</h3>
+${results.items.map(workEntry(4)).join("\n")}`;
     const research = site.research;
     const profiles = research.profiles.map((l) => `<a href="${href(l.link)}" rel="noopener">${esc(l.linkText)}</a>`);
-    const profileLine = `<p>${esc(research.lead)} ${profiles.slice(0, -1).join(", ")}, and ${profiles.at(-1)}.</p>`;
+    const profileLine = profiles.length
+        ? `<p>${esc(research.lead)} ${new Intl.ListFormat("en", { type: "conjunction" }).format(profiles)}.</p>`
+        : "";
     const skills = site.skills.groups
         .map((g) => `<div class="entry"><p class="when">${esc(g.label)}</p><p>${g.items.map(esc).join(", ")}</p></div>`)
         .join("\n");
@@ -287,7 +302,8 @@ ${site.roles.map(roleHtml).join("\n")}</section>
 <ul class="results">${site.technology.items.map((t) => `<li>${esc(t)}</li>`).join("\n")}</ul></section>
 <section aria-labelledby="h-pubs"><h2 id="h-pubs">Publications</h2>
 ${profileLine}
-${pubs}</section>
+${pubs}
+${resultsHtml}</section>
 <section aria-labelledby="h-edu"><h2 id="h-edu">Education</h2>
 ${edu}</section>
 <section aria-labelledby="h-cred"><h2 id="h-cred">Licenses & certifications</h2>
@@ -372,7 +388,7 @@ function indexPage() {
 <div>
 <h1>${esc(P.name)}</h1>
 <p class="headline">${esc(P.headline)} <span class="dim">${esc(P.location)}</span></p>
-${site.summary.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("\n")}
+${site.summary.paragraphs.map((p) => `<p>${paraHtml(p)}</p>`).join("\n")}
 <p class="consulting">${esc(site.consulting.text)} <a href="${href(`mailto:${P.email}`)}">${esc(site.consulting.linkText || "Email me")}</a>.${site.consulting.after ? ` ${esc(site.consulting.after)}` : ""}</p>
 </div>
 </section>
@@ -467,7 +483,7 @@ function notFoundPage() {
 function searchDocs() {
     const docs = [];
     const add = (url, title, section, text) => docs.push({ url, title, section, text });
-    add("/", "Summary", "Resume", [...site.summary.paragraphs, site.consulting.text, site.consulting.after || ""].join(" "));
+    add("/", "Summary", "Resume", [...site.summary.paragraphs.map(paraText), site.consulting.text, site.consulting.after || ""].join(" "));
     add("/#h-results", "Selected results", "Resume", site.results.map((r) => `${r.lead ? `${r.lead}. ` : ""}${r.text}`).join(" "));
     for (const r of site.roles) {
         const text = [r.title, r.titleNote, r.place, r.intro, ...r.bullets.map((b) => `${b.lead || ""} ${b.text}`)];
@@ -476,6 +492,7 @@ function searchDocs() {
     add("/#h-tech", "Technology", "Resume", site.technology.items.join(" "));
     add("/#h-pubs", "Research profiles", "Publications", `${site.research.lead} ${site.research.profiles.map((l) => l.linkText).join(", ")}`);
     for (const p of site.publications) add(`/#${p.id}`, p.title, "Publications", [p.kind, p.text, p.linkText].filter(Boolean).join(" "));
+    for (const p of site.researchResults.items) add(`/#${p.id}`, p.title, site.researchResults.heading, [p.kind, p.text, p.linkText].filter(Boolean).join(" "));
     for (const e of site.education) add(`/#${e.id}`, e.org, "Education", e.text);
     for (const g of site.credentials) add("/#h-cred", g.group, "Licenses & certifications", g.items.map((i) => i.text).join(". "));
     for (const a of site.affiliations) add(`/#${a.id}`, a.org, "Boards, memberships & service", `${a.role} ${a.text}`);
