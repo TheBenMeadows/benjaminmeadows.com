@@ -319,7 +319,7 @@ function timelineItems() {
         items.push({ date: a.start, kind: "board", title: a.short || a.role, org: a.org, span: fmtRange(a.start, a.end), summary: a.text, href: `/#${a.id}` });
     }
     for (const t of talks.speaking) {
-        items.push({ date: t.date, kind: "speaking", title: t.title, org: t.venue, summary: t.kind, href: `/speaking/#${t.id}` });
+        items.push({ date: t.date, kind: t.timelineKind || "speaking", title: t.title, org: t.venue, summary: t.kind, href: `/speaking/#${t.id}` });
     }
     items.push(...site.milestones);
     for (const it of items) {
