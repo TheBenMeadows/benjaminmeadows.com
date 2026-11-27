@@ -1,6 +1,6 @@
 {
   "_comment": "Site copy. Every item lists the fact ids it rests on in `facts`. Ids point into a private fact base; `linkedin:<section>` means the text is already live on the public LinkedIn profile. scripts/check-visibility.py fails when an id is unknown or not public.",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "origin": "https://benjaminmeadows.com",
   "person": {
     "name": "Benjamin Meadows",
@@ -844,10 +844,10 @@
     "items": [
       {
         "id": "res-brouwer",
-        "title": "Eight new lower bounds in Andries Brouwer's tables of bounds for error-correcting codes",
+        "title": "Fourteen new lower bounds in Andries Brouwer's tables of bounds for error-correcting codes",
         "kind": "Table results",
         "date": "2026-11",
-        "text": "Each bound is credited to me by name. One is a ternary code of length 15 and minimum distance 10 with 31 words; the table's previous bound was 27, from a 1995 code. On the constant-weight table, 45 binary words of length 30 and weight 9, any two differing in at least 12 places, replace the 44 the table had.",
+        "text": "Each bound is credited to me by name: seven on the tables of ternary, quaternary, 5-ary and mixed codes and seven on the table of constant-weight binary codes. One is a ternary code of length 15 and minimum distance 10 with 31 words; the table's previous bound was 27, from a 1995 code. On the constant-weight table, 45 binary words of length 30 and weight 9, any two differing in at least 12 places, replace the 44 the table had. The constant-weight codes came from Christopher Rosin's bit-swap tabu search, seeded as in William Echols' paper and started from the best known code for each cell.",
         "link": "https://aeb.win.tue.nl/codes/ternary-1.html",
         "linkText": "Brouwer's ternary table",
         "more": [
