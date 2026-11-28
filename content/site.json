@@ -901,6 +901,18 @@
           "research-packomania-tables",
           "pub-packing"
         ]
+      },
+      {
+        "id": "res-friedman",
+        "title": "Twelve configurations on Erich Friedman's page for the ratio of maximum to minimum distance in 3 dimensions",
+        "kind": "Table results",
+        "date": "2026-11",
+        "text": "Erich Friedman's Packing Center page on minimizing the ratio of maximum to minimum distance in 3 dimensions credits me with twelve sets of n points in space, for n = 36, 38 and 41 to 50. For 41 to 50 they are the page's first entries, and at 36 and 38 they replaced Matt Van Horn's entries with slightly smaller values. I checked each of the twelve in exact rational arithmetic.",
+        "link": "https://erich-friedman.github.io/packing/maxmin3/",
+        "linkText": "Friedman's max/min distance page",
+        "facts": [
+          "research-friedman-maxmin3"
+        ]
       }
     ]
   }
